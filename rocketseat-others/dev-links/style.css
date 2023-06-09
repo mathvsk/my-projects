@@ -1,0 +1,215 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --text-color: white;
+  --bg-url: url('./assets/bg-mobile.jpg');
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url('./assets/bg-mobile-white.jpg');
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body * {
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  padding: 5.6rem 0 3.2rem;
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+main {
+  margin: 0 2.4rem;
+
+  display: grid;
+  justify-items: center;
+  gap: 2.4rem;
+  grid-template-rows: 23rem 1fr 9rem 7rem;
+  grid-template-areas: "profile" "links" "social-media" "footer";
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.profile > img {
+  width: 112px;
+  
+  margin-top: 2.4rem;
+  border-radius: 50%;
+}
+
+.profile > p {
+  text-align: center;
+  margin-top: .8rem;
+}
+
+.switch {
+  width: 6.4rem;
+  position: relative;
+
+  margin: 3.2rem auto .8rem;
+}
+
+.switch > button {
+  width: 3.2rem;
+  height: 3.2rem;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: none;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  outline: 8px solid transparent;
+  animation: slide-back 0.2s;
+}
+
+.light .switch button {
+  animation: slide-in 0.2s forwards;
+}
+
+.switch > button:hover {
+  transition: .5s;
+  border: none;
+  outline-color: var(--highlight-color);
+}
+
+.profile > .switch > span {
+  display: block;
+  width: 6.4rem;
+  height: 2.4rem;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+
+  position: relative;
+}
+
+.light .switch > button {
+  right: 0;
+}
+
+.links {
+  width: 100%;
+  max-width: 58.8rem;
+  grid-area: links;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.links button {
+  width: 100%;
+
+  padding: 1.6rem 2.4rem;
+  
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.links button:first-child {
+  margin-top: 2.4rem;
+}
+
+button:hover {
+  transition: 1s;
+
+  border: 1px solid var(--text-color);
+}
+
+.social-media { 
+  grid-area: social-media;
+
+  margin-top: 2.4rem;
+}
+
+.social-media > ul {
+  display: flex;
+}
+
+ion-icon {
+  font-size: 2.4rem;
+  padding: 1.6rem;
+
+  border-radius: 50%;
+}
+
+ion-icon:hover {
+  transition: 1s;
+  background-color: var(--highlight-color);
+}
+
+.footer {
+  grid-area: footer;
+
+  margin-top: 2.4rem;
+}
+
+.footer > p {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url('./assets/bg-desktop.jpg');
+  }
+
+  .light {
+    --bg-url: url('./assets/bg-desktop-white.jpg');
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
