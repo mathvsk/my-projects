@@ -7,12 +7,14 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  input {
+  input, button {
+    background: transparent;
     border: none;
   }
 
   body {
     background: ${({ theme }) => theme['gray-600']};
+    color: ${({ theme }) => theme['gray-100']};
   
     ::before {
       content: '';
@@ -26,5 +28,13 @@ export const GlobalStyle = createGlobalStyle`
 
       background: ${({ theme }) => theme['gray-700']};;
     }
-  } 
+  }
+  
+  body, input, textarea, button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+
+    color: ${({ theme }) => theme['gray-100']};
+  }
 `
