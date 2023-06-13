@@ -122,8 +122,23 @@ export const TasksContent = styled.div`
 
   line-height: 140%;
 
-  button {
-    padding: 0.3125rem;
+  & > :first-child {
+    display: flex;
+    gap: 0.75rem;
+
+    & > button {
+      flex-shrink: 0; // Utilizei dessa propriedade pq o display flex da minha div pai, tava afetando o tamanho do meu checkbox
+    }
+  }
+
+  & > :nth-child(2) {
+    display: flex;
+
+    padding: 0.25rem;
+
+    border-radius: 4px;
+
+    color: ${({ theme }) => theme['gray-300']};
 
     transition: background 0.2s;
     cursor: pointer;
@@ -131,7 +146,6 @@ export const TasksContent = styled.div`
     &:hover {
       color: ${({ theme }) => theme.danger};
       background: ${({ theme }) => theme['gray-400']};
-      border-radius: 4px;
     }
   }
 `

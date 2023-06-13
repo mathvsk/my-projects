@@ -8,6 +8,7 @@ import {
 import { PlusCircle, Trash } from '@phosphor-icons/react'
 
 import Logo from '../../assets/logo.svg'
+import { CheckBox } from '../../components/CheckBox'
 
 export function Home() {
   return (
@@ -39,33 +40,16 @@ export function Home() {
           </div>
 
           <TasksContent>
-            <input type="checkbox" name="" id="" />
-            <span>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
-              assumenda delectus quas ipsam voluptatem numquam eos fuga veniam
-            </span>
+            <label htmlFor="teste">
+              <CheckBox id="teste" />
+              <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Magnam, assumenda delectus quas ipsam voluptatem numquam eos
+                fuga veniam
+              </span>
+            </label>
             <button>
-              <Trash size={14} />
-            </button>
-          </TasksContent>
-          <TasksContent>
-            <input type="checkbox" name="" id="" />
-            <span>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
-              assumenda delectus quas ipsam voluptatem numquam eos fuga veniam
-            </span>
-            <button>
-              <Trash size={14} />
-            </button>
-          </TasksContent>
-          <TasksContent>
-            <input type="checkbox" name="" id="" />
-            <span>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam,
-              assumenda delectus quas ipsam voluptatem numquam eos fuga veniam
-            </span>
-            <button>
-              <Trash size={14} />
+              <Trash size={16} />
             </button>
           </TasksContent>
         </TasksContainer>
