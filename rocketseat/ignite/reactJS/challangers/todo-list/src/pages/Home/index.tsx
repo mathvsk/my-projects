@@ -1,57 +1,60 @@
-import {
-  HeaderContainer,
-  InputContainer,
-  MainContainer,
-  TasksContainer,
-  TasksContent,
-} from './style'
-import { PlusCircle, Trash } from '@phosphor-icons/react'
+import { MainContainer, TasksContainer, TasksContent } from './style'
+import { Trash } from '@phosphor-icons/react'
 
-import Logo from '../../assets/logo.svg'
 import { CheckBox } from '../../components/CheckBox'
 
+import { useState } from 'react'
+import { Header } from '../../components/Header'
+import { NewTodo } from './NewTodo'
+
+export interface Todo {
+  id: string
+  title: string
+}
+
 export function Home() {
+  const [todo, setTodo] = useState<Todo[]>([])
+
+  function addNewTodo(newTodo: string) {
+    setTodo([
+      {
+        id: String(Math.random()),
+        title: newTodo,
+      },
+      ...todo,
+    ])
+  }
+
   return (
     <>
-      <HeaderContainer>
-        <img src={Logo} alt="" />
-      </HeaderContainer>
+      <Header />
 
       <MainContainer>
-        <InputContainer>
-          <input type="text" placeholder="Adicione uma nova tarefa" />
-
-          <button>
-            Criar
-            <PlusCircle size={16} weight="bold" />
-          </button>
-        </InputContainer>
+        <NewTodo onAddNewTodo={addNewTodo} />
 
         <TasksContainer>
           <div>
             <p>
               Tarefas criadas
-              <span>5</span>
+              <span>{todo.length}</span>
             </p>
             <p>
               Concluídas
-              <span> 2 de 5</span>
+              <span> 2 de {todo.length}</span>
             </p>
           </div>
 
-          <TasksContent>
-            <label htmlFor="teste">
-              <CheckBox id="teste" />
-              <span>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Magnam, assumenda delectus quas ipsam voluptatem numquam eos
-                fuga veniam
-              </span>
-            </label>
-            <button>
-              <Trash size={16} />
-            </button>
-          </TasksContent>
+          {todo.map((todo) => (
+            <TasksContent key={todo.id}>
+              <label htmlFor="teste">
+                <CheckBox id="teste" />
+                <span>{todo.title}</span>
+              </label>
+              <button>
+                <Trash size={16} />
+              </button>
+            </TasksContent>
+          ))}
         </TasksContainer>
       </MainContainer>
     </>

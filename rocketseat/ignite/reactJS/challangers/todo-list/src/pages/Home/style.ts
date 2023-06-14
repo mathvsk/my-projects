@@ -1,15 +1,5 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    padding-top: 4.5rem;
-    padding-bottom: calc(5rem - 27px);
-  }
-`
 export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -17,53 +7,6 @@ export const MainContainer = styled.main`
 
   max-width: 46rem;
   margin: 0 auto;
-`
-export const InputContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 0.5rem;
-
-  input {
-    width: 39.9375rem;
-    height: 3.375rem;
-
-    padding: 1rem 0 1rem 1rem;
-
-    background: ${({ theme }) => theme['gray-500']};
-
-    border-radius: 8px;
-
-    &:focus {
-      outline: transparent;
-      box-shadow: 0px 0px 0px 1px ${({ theme }) => theme['purple-dark']};
-    }
-  }
-
-  button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 1rem;
-
-    border: none;
-    border-radius: 8px;
-
-    background: ${({ theme }) => theme['blue-dark']};
-
-    font-weight: 700;
-    font-size: 0.875rem;
-
-    cursor: pointer;
-
-    transition: background 0.2s;
-
-    &:hover {
-      background: ${({ theme }) => theme.blue};
-    }
-  }
 `
 export const TasksContainer = styled.div`
   display: flex;
@@ -110,6 +53,7 @@ export const TasksContainer = styled.div`
 export const TasksContent = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
 
   gap: 0.75rem;
 
