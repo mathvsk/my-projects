@@ -1,3 +1,4 @@
+import * as Checkbox from '@radix-ui/react-checkbox'
 import styled from 'styled-components'
 
 export const MainContainer = styled.main`
@@ -91,5 +92,41 @@ export const TasksContent = styled.div`
       color: ${({ theme }) => theme.danger};
       background: ${({ theme }) => theme['gray-400']};
     }
+  }
+`
+export const CheckBoxRoot = styled(Checkbox.Root)`
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 2px solid ${({ theme }) => theme.blue};
+
+  transition: background 0.2s;
+
+  &[data-state='checked'] {
+    border-color: ${({ theme }) => theme['purple-dark']};
+    background: ${({ theme }) => theme['purple-dark']};
+
+    transition: all 0.2s;
+
+    ~ span {
+      color: ${({ theme }) => theme['gray-300']};
+      text-decoration: line-through;
+    }
+
+    &:hover {
+      border-color: ${({ theme }) => theme.purple};
+      background: ${({ theme }) => theme.purple};
+      opacity: 0.9;
+    }
+  }
+
+  &[data-state='unchecked']:hover {
+    background: rgba(0, 119, 190, 0.2);
   }
 `

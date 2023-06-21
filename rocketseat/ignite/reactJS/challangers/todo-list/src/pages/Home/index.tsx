@@ -1,9 +1,14 @@
-import { MainContainer, TasksContainer, TasksContent } from './style'
-import { Trash } from '@phosphor-icons/react'
-
-import { CheckBox } from '../../components/CheckBox'
-
 import { useState } from 'react'
+import * as Checkbox from '@radix-ui/react-checkbox'
+
+import {
+  CheckBoxRoot,
+  MainContainer,
+  TasksContainer,
+  TasksContent,
+} from './style'
+import { Trash, Check } from '@phosphor-icons/react'
+
 import { Header } from '../../components/Header'
 import { NewTodo } from './NewTodo'
 import { EmptyTask } from './EmptyTask'
@@ -15,6 +20,7 @@ export interface Todo {
 
 export function Home() {
   const [todo, setTodo] = useState<Todo[]>([])
+  const [completedTasks, setCompletedTasks] = useState(0)
 
   function addNewTodo(newTodo: string) {
     setTodo([
@@ -29,6 +35,20 @@ export function Home() {
   function handleDeleteTask(taskID: string) {
     const filteredTasks = todo.filter((task) => task.id !== taskID)
     setTodo(filteredTasks)
+
+    if (completedTasks > 0) {
+      setCompletedTasks(completedTasks - 1)
+    }
+  }
+
+  function updateNumberTodoChecked(checked: boolean | string) {
+    if (checked) {
+      setCompletedTasks(completedTasks + 1)
+    } else {
+      if (completedTasks > 0) {
+        setCompletedTasks(completedTasks - 1)
+      }
+    }
   }
 
   return (
@@ -46,7 +66,9 @@ export function Home() {
             </p>
             <p>
               Concluídas
-              <span> 0 de {todo.length}</span>
+              <span>
+                {completedTasks} de {todo.length}
+              </span>
             </p>
           </div>
 
@@ -56,7 +78,16 @@ export function Home() {
             todo.map((todo) => (
               <TasksContent key={todo.id}>
                 <label htmlFor={todo.id}>
-                  <CheckBox id={todo.id} />
+                  <CheckBoxRoot
+                    id={todo.id}
+                    onCheckedChange={(target) =>
+                      updateNumberTodoChecked(target)
+                    }
+                  >
+                    <Checkbox.Indicator asChild>
+                      <Check size={8} weight="bold" />
+                    </Checkbox.Indicator>
+                  </CheckBoxRoot>
                   <span>{todo.title}</span>
                 </label>
                 <button onClick={() => handleDeleteTask(todo.id)}>
