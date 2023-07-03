@@ -8,12 +8,12 @@
 </div>
 
 ## Future functionalities
-+ [] Add a song
-+ [] Add the functionality to play a song
-+ [] Add a playlist
++ [ ] Add a song
++ [ ] Add the functionality to play a song
++ [ ] Add a playlist
 
 ## Technologies
-+ [HTML](https://react.dev/)
++ [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 + [CSS](https://www.typescriptlang.org/)
 
 ## How to use
