@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --backgorund-color: #0F0D13;
+  --player-color: #2A2141;
+  --font-dafult: 'Roboto', sans-serif;
+  --font-color-default: #E1E1E6;
+  --timer-color: #C4C4CC;
+}
+
+body {
+  background: var(--backgorund-color);
+
+  font-family: var(--font-dafult);
+  color: var(--font-color-default);
+}
+
+#app {
+  display: grid;
+
+  /* max-content para que o grid se ajuste ao conteudo */
+  grid-template-columns: max-content, max-content; 
+
+  /* define como sera distribuido meus conteudos pelo grid */
+  grid-template-areas: 'A B' 'A C';
+  gap: 2rem;
+
+  /* trick para centralizar o conteudo com display grid */
+  height: 100vh;
+  place-content: center;
+}
+
+#player1 {
+  grid-area: A;
+  padding: 3.18rem 2.4rem;
+}
+
+#player1 .album {
+  width: 12rem;
+  height: 12rem;
+
+  /* faz meu elemento se ajustar ao tamanho do container (não distorcendo a imagem) */
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+#player2 {
+  grid-area: B;
+}
+
+#player3 {
+  grid-area: C;
+}
+
+#player2 .album, #player3 .album {
+  width: 5rem;
+  height: 5rem;
+  
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+.album-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.player {
+  background-color: var(--player-color);
+  padding: 1.8rem;
+
+  border-radius: 10px;
+}
+
+.player h1 {
+  font-size: 1.50044rem;
+  line-height: 100%;
+}
+
+.player span {
+  font-size: 1.2rem;
+  line-height: 100%;
+}
+
+/* css compartilhados entre os players */
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.title span {
+  opacity: 0.6;
+}
+
+.wrapper {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-control > img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.track-time {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.track {
+  position: relative;
+}
+
+.track::before {
+  content: '';
+  width: 100%;
+  height: 0.4rem;
+  display: block;
+  background: #D9D9D9;
+  opacity: 0.3;
+  border-radius: 10px;
+
+  position: absolute;
+}
+
+.track::after {
+  content: '';
+  width: 70%;
+  height: 0.4rem;
+  display: block;
+  background: #D9D9D9;
+  border-radius: 10px;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+
+  opacity: 0.7;
+
+  font-size: 0.90025rem;
+  line-height: 100%;
+  color: var(--timer-color);
+}
+
+.horizontal {
+  justify-content: space-evenly;
+}

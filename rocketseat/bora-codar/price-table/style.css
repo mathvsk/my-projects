@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-green-100: #04d361;
+  --color-green-200: #1b873f;
+  --color-purple-100: #996dff;
+  --color-purple-200: #7c3aed;
+  --color-white: #ffffff;
+  --color-orange: #fba94c;
+
+  --font-default: 'Titillium Web', sans-serif;
+}
+
+body {
+  font-family: var(--font-default);
+  background-color: var(--color-gray-50);
+}
+
+.pricing-table {
+  display: grid;
+  gap: 2rem;
+
+  padding: 5rem 1.25rem;
+}
+
+section.best {
+  position: relative;
+  margin-top: 1.0625rem;
+}
+
+.best::before {
+  content: 'mais vantajoso';
+  color: var(--color-gray-900);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.045rem;
+  text-transform: uppercase;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 6px;
+  background: var(--orange, #FBA94C);
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: -1.0625rem;
+}
+
+section {
+  width: 20rem;
+  margin: auto;
+
+  transition: transform .3s;
+}
+
+section:hover {
+  transform: scale(1.05);
+}
+
+section .inner {
+  padding: 1.5rem;
+  background: var(--color-white);
+
+  border: 1px solid var(--color-gray-200);
+  border-radius: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  transition: border .3s;
+}
+
+section .inner:hover {
+  border-color: var(--color-purple-100);
+}
+
+section .plan-name > p {
+  color: var(--color-purple-200);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.0525rem;
+  text-transform: uppercase;
+}
+
+.price-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 0.5rem;
+}
+
+.title {
+  color: var(--color-gray-800);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.title + span {
+  color: var(--color-gray-800);
+  font-size: 1.125rem;
+}
+
+.price {
+  font-weight: 700;
+}
+
+button {
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  
+  padding: 1rem 1.5rem;
+
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-gray-800);
+
+  color: var(--color-gray-800);
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background .5s; /* transition no elemento é o tempo que ele leva para "voltar" depois do hover */
+}
+
+button:hover {
+  transition: background .5s;
+  background: var(--color-gray-800);
+  color: var(--color-white);
+}
+
+ul {
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: 1rem;
+
+  display: grid;
+  gap: 1rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li > span {
+  padding-left: 0.5rem;
+  flex: 1;
+
+  color: var(--color-gray-600);
+  font-size: 1rem;
+  letter-spacing: 0.06rem;
+}
+
+li .ph-check {
+  font-size: 1.25rem;
+  color: var(--color-green-200);
+
+  text-align: center;
+}
+
+li .ph-info {
+  font-size: 1rem;
+
+ color: var(--color-gray-600)
+}
+
+/* Enterprise */
+
+.enterprise .title {
+  color: var(--gray-800, #1E293B);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.enterprise .inner {
+  gap: 2rem;
+}
+
+.enterprise ul {
+  padding-top: 2rem;
+}
+
+/* Ultimate */
+
+.ultimate .inner{
+  padding-top: 2.5rem;
+  background: var(--color-gray-900);
+}
+
+.ultimate .plan-name > p {
+  color: var(--color-purple-100);
+}
+
+.ultimate .price-title > span {
+  color: var(--color-white);
+}
+
+.ultimate button {
+  background: var(--color-purple-100);
+  color: var(--color-white);
+}
+
+.ultimate button:hover {
+  background: var(--color-purple-200);
+}
+
+.ultimate ul {
+  border-top: 1px solid var(--color-gray-700);
+}
+
+.ultimate li > span {
+  color: var(--color-gray-300);
+}
+
+.ultimate li > .ph-info {
+  color: var(--color-gray-500);
+}
+
+/* Animation */
+
+section {
+  animation: appear 2s backwards var(--delay);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* Media size */
+@media (min-width: 1100px) {
+  .pricing-table {
+    grid-template-columns: repeat(3, min-content);
+  }
+
+  /* section {
+    width: 22rem;
+  } */
+}
