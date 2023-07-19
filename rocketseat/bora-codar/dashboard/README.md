@@ -9,7 +9,7 @@
 
 ## Technologies
 + [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-+ [CSS](https://www.typescriptlang.org/)
++ [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
 ## How to use
 Clone the repository and run it using a live server.
