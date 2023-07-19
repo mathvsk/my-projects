@@ -12,7 +12,7 @@
 + [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
 ## How to use
-Clone the repository and run it using a live server.
+Clone the repository and run.
 
 
 ## Project
