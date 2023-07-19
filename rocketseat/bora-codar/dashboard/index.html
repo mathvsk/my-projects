@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app" class="grid">
+    <div class="box grid">
+      <div class="header-content">
+        NPS geral
+      </div>
+      <div class="main-content grid">
+        <img src="images/smile.svg" alt="">
+        <span>Excelente!</span>
+      </div>
+      <div class="footer-content">
+        <span>NPS Score</span>
+        <span>75</span>
+      </div>
+    </div>
+
+    <div class="box grid">
+      <div class="header-content">
+        Vendas fechadas
+      </div>
+      <div class="main-content">
+        <svg class="circle" viewBox="0 0 232 232" style="--percentage: 70">
+          <circle 
+            cx="50%" 
+            cy="50%" 
+            r="98.5" 
+            opacity="0.1"
+            stroke="#D9D9D9"
+          />
+          <circle 
+            cx="50%" 
+            cy="50%" 
+            r="98.5" 
+            stroke="url(#paint0_linear_217_2)"
+          />
+          <defs>
+            <linearGradient id="paint0_linear_217_2" x1="1.97421e-07" y1="82" x2="154" y2="178" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#CE9FFC"/>
+              <stop offset="1" stop-color="#7367F0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        
+        <div class="main-information">
+          <h3>70%</h3>
+          <span>alcançada</span>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="infos">
+          <span>Esperado</span>
+          <span>100</span>
+        </div>
+        <div class="infos">
+          <span style="--bg-color: linear-gradient(122deg, #CE9FFC 0%, #7367F0 100%);" >Alcançado</span>
+          <span>70</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box grid">
+      <div class="header-content">
+        Meta mensal
+      </div>
+      <div class="main-content">
+        <svg class="circle" viewBox="0 0 232 232" style="--percentage: 30">
+          <circle 
+            cx="50%" 
+            cy="50%" 
+            r="98.5" 
+            opacity="0.1"
+            stroke="#D9D9D9"
+          />
+          <circle 
+            cx="50%" 
+            cy="50%" 
+            r="98.5" 
+            stroke="url(#paint0_linear_217_3)"
+          />
+          <defs>
+            <linearGradient id="paint0_linear_217_3" x1="1.97421e-07" y1="82" x2="154" y2="178" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#DF9780"/>
+              <stop offset="1" stop-color="#A66DE9"/>
+            </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="main-information">
+          <h3>30%</h3>
+          <span>alcançada</span>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="infos">
+          <span>Esperado</span>
+          <span>R$ 70K</span>
+        </div>
+        <div class="infos">
+          <span style="--bg-color: linear-gradient(122deg, #DF9780 0%, #A66DE9 100%);">Alcançado</span>
+          <span>R$ 63K</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box grid column-graph">
+      <div class="header-content left ">
+        Vendas por dia da semana
+      </div>
+
+      <div class="wrapper">
+        <div class="grid left">
+          <div class="most-sell grid">
+            <span>Dia com mais vendas</span>
+            quarta-feira
+          </div>
+          <div class="less-sell grid">
+            <span>Dia com mais vendas</span>
+            domingo
+          </div>
+        </div>
+        <div class="bars">
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 3.9rem"></div>
+            <span>dom</span>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 11.5rem"></div>
+            <span>seg</span>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 7.6rem"></div>
+            <span>ter</span>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 15.9rem"></div>
+            <span>qua</span>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 12.9rem"></div>
+            <span>qui</span>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 12rem"></div>
+            <span>sex</span>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="--height: 6.9rem"></div>
+            <span>sab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --background: #292738;
+  --card-color: #363447;
+  --font-color-primary: #FFFFFF;
+  --font-color-secondary: #81FBB8;
+}
+
+/* Classe utilitaria para grid */
+.grid {
+  display: grid;
+}
+
+.left {
+  text-align: left;
+}
+
+/* REGRAS GLOBAIS */
+body {
+  font-size: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--font-color-primary);
+
+  background: var(--background);
+}
+
+#app {
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(3, max-content);
+  column-gap: 3.2rem;
+  row-gap: 5.9rem;
+
+  height: 100vh;
+  padding: 11.2rem 12.3rem;
+
+  align-content: center;
+  justify-content: center;
+}
+
+.box {
+  padding: 2.9rem 4.8rem;
+
+  border-radius: 16px;
+  box-shadow: 3px 4px 26px 0px rgba(0, 0, 0, 0.25);
+
+  background: var(--card-color);
+}
+
+.box.column-graph {
+  grid-column: 1 / -1;
+}
+
+.box.grid {
+  text-align: center;
+
+  gap: 3.2rem;
+}
+
+.header-content {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.main-content.grid {
+  height: 19.7rem;
+  height: 19.7rem;
+  place-content: center;
+  justify-items: center;
+
+  gap: 1.6rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+/* NPS */
+.box:first-child {
+  width: 29.6rem;
+}
+
+.main-content span {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 160%;
+
+  color: var(--font-color-secondary);
+}
+
+.footer-content:not(:has(div)) {
+  gap: 1rem;
+}
+
+/* VENDAS/METAS */
+.main-content {
+  position: relative;
+}
+
+.main-information {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.main-information h3 {
+  font-size: 3.4rem;
+}
+
+.main-information span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #FFF;
+}
+
+.circle {
+  --percentage: 0;
+
+  width: 19.7rem;
+  height: 19.7rem;
+  transform: rotate(-90deg);
+
+  stroke-width: 35;
+  fill: none;
+
+  stroke-dasharray: 618;
+  stroke-dashoffset: 618;
+}
+
+.circle circle:nth-child(1) {
+  stroke-dashoffset: 0;
+}
+
+.circle circle:nth-child(2) {
+  stroke-dashoffset: calc(618 - (618 * var(--percentage)) / 100);
+  stroke-linecap: round;
+
+  animation: progress 1s ease-in-out;
+}
+
+@keyframes progress {
+  from {
+    stroke-dasharray: 618;
+    stroke-dashoffset: 618;
+  }
+}
+
+.infos {
+  margin-top: auto; /* Faz com que o elemento fique no final do container */
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-content .infos span {
+  --bg-color: #4A4556; /* Cor de fundo do circulo (variavel no contexto do span */
+
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.footer-content .infos span:first-child {
+  font-weight: 500;
+}
+
+.footer-content .infos span:nth-child(1)::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  background: var(--bg-color);
+  
+  border-radius: 50%;
+}
+
+/* METAS  */
+.column-graph {
+  gap: 3.2rem;
+}
+
+.most-sell, .less-sell {
+  grid-template-rows: max-content;
+    gap: 0.8rem;
+}
+
+.most-sell span, .less-sell span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.left .grid span::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  clip-path: polygon(50% 0%, 0% 80%, 100% 80%);
+}
+
+.left .most-sell span::before {
+  background: linear-gradient(180deg, #81fbb8 0%, #28c76f 100%);
+}
+
+.left .less-sell span::before {
+  background: linear-gradient(180deg, #ea5455 0%, #feb692 100%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.most-sell , .less-sell {
+  font-size: 2.4rem;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.column-graph .wrapper .left {
+  gap: 3.2rem;
+}
+
+.column-graph .wrapper .left,
+.column-graph .wrapper .right {
+  flex: 1;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5.9rem;
+  position: relative;
+}
+
+.bars::before {
+  content: "";
+  display: block;
+  height: .3rem;
+  width: 100%;
+
+  border-radius: 999px;
+  background: #4A4556;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar-wrapper {
+  display: grid;
+  grid-template-rows: 15.9rem max-content;
+  justify-items: center;
+  gap: .5rem;
+
+  z-index: 1;
+}
+
+.bar {
+  width: 1.5rem;
+  height: var(--height);
+  align-self: end;
+
+  background: linear-gradient(180deg, #90F7EC 0%, #32CCBC 100%);
+  border-radius: 999px;
+
+  animation: up 1s ease-in-out;
+}
+
+@keyframes up {
+  from {
+    height: 0;
+  }
+}
