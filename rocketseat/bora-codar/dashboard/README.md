@@ -16,4 +16,4 @@ Clone the repository and run it using a live server.
 
 
 ## Project
-<img src=".github/project.gif.png" alt="">
+<img src=".github/project.gif" alt="">
