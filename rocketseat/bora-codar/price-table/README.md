@@ -4,7 +4,7 @@
 <div align="center">
   
   ![License](https://img.shields.io/github/license/mathvsk/todo-list.svg)
-  [![Generic badge](https://img.shields.io/badge/status-in_progress-98c610.svg)](https://shields.io/)
+  [![Generic badge](https://img.shields.io/badge/status-finished-98c610.svg)](https://shields.io/)
 </div>
 
 ## Technologies
