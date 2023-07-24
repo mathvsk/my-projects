@@ -18,12 +18,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <Container>
       <Header>
         <Image src={logo} alt="logo" />
-        <img src={logo.src} />
       </Header>
 
-      <main className={roboto.className}>
+      <div className={`${roboto.className} content`}>
         <Component {...pageProps} />
-      </main>
+      </div>
     </Container>
   )
 }
