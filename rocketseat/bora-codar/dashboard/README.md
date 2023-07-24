@@ -1,5 +1,5 @@
 <h1 align="center">Dashboard</h1>
-<p align="center">Dashboard with charts using display grid, flex, and pseudo-elements.</p>
+<p align="center">Dashboard with charts using display grid, flex, animation and pseudo-elements.</p>
 
 <div align="center">
   
