@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login page</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <section class="section-wrapper">
+      <header>
+        <img src="public/images/logo.svg" alt="">
+      </header>
+
+      <div class="content-wrapper">
+        <h1>Acesse a plataforma</h1>
+        <span>Faça login ou registre-se para começar a construir seus projetos ainda hoje.</span>
+
+        <form class="login-form" action="">
+          <div class="input-wrapper">
+            <label class="email" for="email">E-mail</label>
+            <input class="input" id="email" type="text" placeholder="Digite seu e-mail">
+          </div>
+
+          <div class="input-wrapper">
+            <div>
+              <label class="password" for="senha">Senha</label>
+              <a href="#">Esqueceu a senha?</a>
+            </div>
+            <input class="input" id="senha" type="text" placeholder="Digite sua senha">
+          </div>
+
+          <button type="submit">Entrar</button>
+
+          <footer>Ainda não tem uma conta? 
+            <a href="#">Inscreva-se</a>
+          </footer>
+        </form>
+      </div>
+    </section>
+    <div class="background"></div>
+    <!-- <img class="background" src="public/images/background-image.png" alt=""> -->
+  </main>
+</body>
+</html>
