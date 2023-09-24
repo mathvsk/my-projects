@@ -5,7 +5,7 @@ import {
   ProductDetails,
 } from '@/styles/pages/products'
 
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 import Stripe from 'stripe'
 
@@ -37,7 +37,18 @@ export default function Products({ product }: ProductProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps<any, { ID: string }> = async ({
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      {
+        params: { id: 'prod_OKMVBs6lpl2M1H' },
+      },
+    ],
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   params,
 }) => {
   if (!params) {
@@ -46,7 +57,7 @@ export const getStaticProps: GetStaticProps<any, { ID: string }> = async ({
     }
   }
 
-  const productID = params.ID
+  const productID = params.id
 
   const product = await stripe.products.retrieve(productID, {
     expand: ['default_price'],

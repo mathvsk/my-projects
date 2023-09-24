@@ -15,8 +15,12 @@ export const ImageContainer = styled('div', {
   borderRadius: 8,
   padding: '.25rem',
 
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
   img: {
-    // objectFit: 'cover',
+    objectFit: 'cover',
   },
 })
 
