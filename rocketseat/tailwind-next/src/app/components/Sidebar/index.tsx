@@ -12,7 +12,7 @@ import { Logo } from './Logo'
 import { NavItem } from './NavItem'
 import { Widget } from './Widget'
 import { Profile } from './Profile'
-import * as Input from './input/Input'
+import * as Input from '../Form/Input'
 
 export function Sidebar() {
   return (
